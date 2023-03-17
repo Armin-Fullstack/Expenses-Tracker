@@ -4,7 +4,7 @@ const Form = () => {
     //   Main container 
     <div className="main-container">
         {/* form container  */}
-        <div className="bg-violet-400 mt-7 rounded-md pr-4 pl-2 py-2">
+        <form className="bg-violet-400 mt-7 rounded-md pr-9 pl-2 py-2">
             {/* inputs container  */}
             <div className="flex flex-wrap gap-5 md:max-w-3xl">
                 {/*  input title  */}
@@ -22,8 +22,11 @@ const Form = () => {
                 <label htmlFor="title" className="font-bold">Date</label>
                 <input type="date" className="w-[350px] rounded-md focus:outline-none p-2"/>
                 </div>
-            </div>
-        </div>
+                </div>
+                {/* buttons container  */}
+                <div className="flex justify-end mt-10 space-x-8">
+                 </div>
+        </form>
     </div>
     )
   }
