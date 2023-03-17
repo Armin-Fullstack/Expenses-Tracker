@@ -4,7 +4,7 @@ const Form = () => {
     //   Main container 
     <div className="main-container">
         {/* form container  */}
-        <form className="bg-violet-400 mt-7 rounded-md pr-9 pl-2 py-2">
+        <form className="bg-violet-400 mt-7 rounded-md pr-9 pl-3 py-4">
             {/* inputs container  */}
             <div className="flex flex-wrap gap-5 md:max-w-3xl">
                 {/*  input title  */}
@@ -25,6 +25,8 @@ const Form = () => {
                 </div>
                 {/* buttons container  */}
                 <div className="flex justify-end mt-10 space-x-8">
+                    <button className="text-slate-800 font-bold text-sm md:text-md">Cancel</button>
+                    <button className="bg-purple-900 text-white px-4 py-2 md:px-8 md:py-4 rounded-lg">Add Expense</button>
                  </div>
         </form>
     </div>
