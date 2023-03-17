@@ -1,7 +1,7 @@
-
+import Form from "../components/Form";
 const Home = () => {
     return (
-      null
+      <Form/>
     )
   }
   

@@ -1,7 +1,7 @@
-
+import Home from "./Home";
 const Pages = () => {
     return (
-      null
+      <Home/>
     )
   }
   
