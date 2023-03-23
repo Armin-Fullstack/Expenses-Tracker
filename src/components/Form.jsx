@@ -1,13 +1,6 @@
-import { useState } from "react";
 
-const Form = () => {
-    const [title , setTitle] = useState("")
-    const [amount , setAmount] = useState("")
-    const [date , setDate] = useState("")
-    const [getInfo , setGetInfo] = useState([])
-
+const Form = ({setGetInfo , getInfo, setTitle , setAmount , setDate , title , amount , date}) => {
     const submitHandler = (e) => {
-        console.log("submited");
         e.preventDefault()
         setGetInfo([ ...getInfo , {id: crypto.randomUUID() , userTitle: title , userAmount: amount , userDate: new Date(date)}])
         setTitle("")

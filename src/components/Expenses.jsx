@@ -1,7 +1,7 @@
 import { useState } from "react";
 import ExpensesItem from "./ExpensesItem"
 
-const Expenses = () => {
+const Expenses = ({getInfo}) => {
   const [filterYear , setFilterYear] = useState("2019")
   return (
     // main container 
@@ -19,8 +19,13 @@ const Expenses = () => {
               </select>
             </div>
             {/* chart section  */}
-
-            <ExpensesItem/>
+            <>
+            {getInfo.map(element => {
+              return (
+                <ExpensesItem key={element.id} userTitle={element.userTitle} userAmount={element.userAmount} userDate={element.userDate}/>
+                ) 
+            })}
+            </>
         </div>
     </div>
   )
