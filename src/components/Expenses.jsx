@@ -17,11 +17,12 @@ const Expenses = ({ filteredExpense, setFilterYear }) => {
           </select>
         </div>
         {/* chart section  */}
-        <>
-          {filteredExpense.map((element) => {
-            return <ExpensesItem key={element.id} userTitle={element.userTitle} userAmount={element.userAmount} userDate={element.userDate} />;
-          })}
-        </>
+
+        {filteredExpense.length === 0 && <p className="text-center text-green-500 text-lg md:text-xl">There aren't any expenses</p>}
+        {filteredExpense.length > 0 &&
+          filteredExpense.map((element) => (
+            <ExpensesItem key={element.id} userTitle={element.userTitle} userAmount={element.userAmount} userDate={element.userDate} />
+          ))}
       </div>
     </div>
   );
