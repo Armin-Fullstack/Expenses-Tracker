@@ -27,7 +27,7 @@ const Form = ({setGetInfo , getInfo, setTitle , setAmount , setDate , title , am
                 {/*  input date  */}
                 <div className="flex flex-col space-y-1">
                 <label htmlFor="title" className="font-bold">Date</label>
-                <input type="date" onChange={(e) => setDate(e.target.value)} value={date} className="w-[350px] rounded-md focus:outline-none p-2"/>
+                <input type="date" onChange={(e) => setDate(e.target.value)} value={date} min="2019-01-01" max="2022-01-01" className="w-[350px] rounded-md focus:outline-none p-2"/>
                 </div>
                 </div>
                 {/* buttons container  */}
