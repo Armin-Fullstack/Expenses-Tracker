@@ -1,12 +1,15 @@
 
-const BarChart = () => {
-
+const BarChart = ({totalMax , chartDataPointValue , chartDataPointLabel}) => {
+    let barChartHeight = "0%"
+    if(totalMax > 0) {
+       barChartHeight = Math.round((chartDataPointValue / totalMax) * 100) + "%"
+    }
     return (
             <div className="flex flex-col">
             <div className="w-full h-full bg-violet-400 rounded-full border border-black flex flex-col justify-end overflow-hidden">
-                <div className="bg-blue-400 w-full h-[50%] rounded-full transition ease-in-out duration-300"></div>
+                <div className="bg-blue-400 " style={{height: barChartHeight}}></div>
             </div>
-            <span>Jan</span>
+            <span>{chartDataPointLabel}</span>
             </div>
     )
 }

@@ -1,6 +1,6 @@
 import BarChart from "./BarChart";
 const ExpensesChart = ({filteredExpense}) => {
-    const chartDataPoint = [
+    let chartDataPoint = [
         {label: "Jan" , value: 0},
         {label: "Feb" , value: 0},
         {label: "Mar" , value: 0},
@@ -22,10 +22,10 @@ const ExpensesChart = ({filteredExpense}) => {
 
     const dataPointValue = chartDataPoint.map(element => element.value)
     const totalMax = Math.max(...dataPointValue)
-    
+
     return (
-        <div className="bg-pink-300 h-[200px] flex justify-between gap-3 md:gap-0 p-4 rounded-md">
-            <BarChart chartDataPoint={chartDataPoint} totalMax={totalMax}/>
+        <div className="bg-pink-300 h-[200px] flex justify-around rounded-md p-2">
+            {chartDataPoint.map(element => <BarChart key={element.label} chartDataPointValue={element.value} chartDataPointLabel={element.label} totalMax={totalMax}/> )}
         </div>
     )
 }
