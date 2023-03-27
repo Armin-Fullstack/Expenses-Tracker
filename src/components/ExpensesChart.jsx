@@ -17,12 +17,15 @@ const ExpensesChart = ({filteredExpense}) => {
 
     filteredExpense.forEach(element => {
         const getExpenseMonth = element.userDate.getMonth()
-        chartDataPoint[getExpenseMonth].value += element.userAmount
+        chartDataPoint[getExpenseMonth].value += +element.userAmount
     });
+
+    const dataPointValue = chartDataPoint.map(element => element.value)
+    const totalMax = Math.max(...dataPointValue)
     
     return (
         <div className="bg-pink-300 h-[200px] flex justify-between gap-3 md:gap-0 p-4 rounded-md">
-            <BarChart chartDataPoint={chartDataPoint}/>
+            <BarChart chartDataPoint={chartDataPoint} totalMax={totalMax}/>
         </div>
     )
 }
