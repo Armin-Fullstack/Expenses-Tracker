@@ -1,3 +1,4 @@
+import ExpensesChart from "./ExpensesChart";
 import ExpensesItem from "./ExpensesItem";
 
 const Expenses = ({ filteredExpense, setFilterYear }) => {
@@ -17,6 +18,7 @@ const Expenses = ({ filteredExpense, setFilterYear }) => {
           </select>
         </div>
         {/* chart section  */}
+        <ExpensesChart/>
 
         {filteredExpense.length === 0 && <p className="text-center text-green-500 text-lg md:text-xl">There aren't any expenses</p>}
         {filteredExpense.length > 0 &&
